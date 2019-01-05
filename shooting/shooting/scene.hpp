@@ -7,17 +7,15 @@ class scene {
 public:
 	scene();
 	~scene();
-	void initialize();
-	void finalize();
+	virtual void initialize();
+	virtual void finalize();
 
-	void update();
-	void draw();
-	void update_late();
+	virtual void update();
+	virtual void draw();
+	virtual void update_late();
 
-	float get_time();
-	int get_xy(int num);
-private:
-	player* pl;
+	
+protected:
 	float time;
 	int x, y;
 };

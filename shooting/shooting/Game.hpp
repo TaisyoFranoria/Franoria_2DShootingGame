@@ -1,4 +1,4 @@
-#include"scene.hpp"
+#include"game_scene.hpp"
 
 class Game {
 public:

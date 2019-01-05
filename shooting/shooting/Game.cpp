@@ -9,7 +9,7 @@ Game::~Game() {
 
 void Game::initialize() {
 	alive = true;
-	sc = new scene();
+	sc = new GameScene();
 }
 
 void Game::finalize() {

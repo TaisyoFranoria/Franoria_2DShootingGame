@@ -9,11 +9,19 @@ player::~player() {
 }
 
 void player::initialize() {
-	x = 0;
-	y = 0;
+	x = 350;
+	y = 600;
+	hx = x + (PLAYER_SIZE / 2);
+	hy = y + (PLAYER_SIZE / 2);
 	for (int i = 0, n = (unsigned)(sizeof(gra) / sizeof(gra[0])); i < n; i++)gra[i] = InitLoadGraph(i);
 	move_num = 2;
 	anim_counter = 1;
+	slow = false;
+
+	status.LIFE = 100;
+	status.BOMB = 2;
+	status.POWER = 0;
+	status.COUNTINUE = 0;
 }
 
 
@@ -25,34 +33,42 @@ void player::update() {
 
 	//テスト　あとでバリバリ変える
 	
+	if (CheckHitKey(KEY_INPUT_RSHIFT)) slow = true;
+	else slow = false;
 
 	if (CheckHitKey(KEY_INPUT_RIGHT)) {
-		x += 5;
+		if (slow) x += 5;
+		else x += 10;
 		move_num = 3;
 	}else if (CheckHitKey(KEY_INPUT_LEFT)) {
-		x -= 5;
+		if (slow) x -= 5;
+		else x -= 10;
 		move_num = 1;
 	}
 	else move_num = 2;
 
 	if (CheckHitKey(KEY_INPUT_UP)) {
-		y -= 5;
+		if (slow) y -= 5;
+		else y -= 10;
 	}
 	if (CheckHitKey(KEY_INPUT_DOWN)) {
-		y += 5;
+		if (slow) y += 5;
+		else y += 10;
 	}
 
 	if (anim_counter > -5) anim_counter++;
 	else if (anim_counter < 5)anim_counter--;
 
+	hx = x + (PLAYER_SIZE / 2);
+	hy = y + (PLAYER_SIZE / 2);
 }
 
 void player::draw() {
-	DrawGraph(x, y, DrawPlayerGraph(move_num), TRUE);
+	DrawExtendGraph(x, y,x+PLAYER_SIZE,y+PLAYER_SIZE, DrawPlayerGraph(move_num), TRUE);
 }
 
 void player::update_late() {
-
+	
 }
 
 int player::get_point(int num) {
@@ -74,6 +90,8 @@ int player::get_status(int num) {
 	case 1:
 		return status.BOMB;
 	case 2:
+		return status.POWER;
+	case 3:
 		return status.COUNTINUE;
 	default:
 		return -1;

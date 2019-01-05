@@ -2,18 +2,22 @@
 #include<Dxlib.h>
 #include<string>
 
+#define PLAYER_SIZE (84)
+
 class player {
 private:
 	int x, y;
+	int hx, hy;//判定のための座標位置
 	int gra[3];
 	int move_num;//1:左に移動 2:デフォルト 3:右に移動
 	int anim_counter;
 	struct status{
 		int LIFE;
 		int BOMB;
+		int POWER;
 		int COUNTINUE;
 	}status;
-
+	bool slow;
 	int DrawPlayerGraph(int num);
 public:
 	player();
