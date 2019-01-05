@@ -9,28 +9,33 @@ Game::~Game() {
 
 void Game::initialize() {
 	alive = true;
-	sc = new GameScene();
+	sc.push_back(new debug_zone());
+	scene_num = 0;
 }
 
 void Game::finalize() {
-	delete sc;
+	for (int i = 0, n = (unsigned)sc.size(); i < n;i++)delete sc[i];
 }
 
 void Game::update() {
-	if (CheckHitKey(KEY_INPUT_ESCAPE))alive = false;
-	sc->update();
+	sc[scene_num]->update();
 }
 
 void Game::draw() {
-	sc->draw();
+	sc[scene_num]->draw();
 }
 
 void Game::update_late() {
-	sc->update_late();
+	sc[scene_num]->update_late();
+	
 }
 
 void Game::all() {
-	update();
-	draw();
-	update_late();
+	if (!sc[scene_num]->get_alive()) { sc[scene_num] = NULL; scene_num++; }
+	if (scene_num >= sc.size())alive = false;
+	if (alive) {
+		update();
+		draw();
+		update_late();
+	}
 }

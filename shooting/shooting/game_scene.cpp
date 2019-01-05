@@ -28,15 +28,13 @@ void GameScene::update() {
 }
 
 void GameScene::draw() {
-	DrawFormatString(0, 0, 0xFFFFFF, "Running...");
-	DrawFormatString(0, 16, 0xFFFFFF, "I—¹‚·‚é‚É‚ÍescƒL[‚ğ‰Ÿ‚µ‚Ä‚­‚¾‚³‚¢");
-	DrawFormatString(0, 32, 0xFFFFFF, "X:%d Y:%d", pl->get_point(0), pl->get_point(1));
 	pl->draw();
 
 }
 
 void GameScene::update_late() {
 	pl->update_late();
+	if (pl->get_status(0) <= 0) alive = false;
 }
 
 float GameScene::get_time() { return time; }

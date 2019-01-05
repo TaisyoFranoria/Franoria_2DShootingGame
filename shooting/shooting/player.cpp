@@ -99,6 +99,28 @@ int player::get_status(int num) {
 	}
 }
 
+void player::set_status(int num, int value) {
+	switch (num) {
+	case 0:
+		if (status.LIFE > 100)status.LIFE = 100;
+		else status.LIFE = value;
+		break;
+	case 1:
+		if (status.BOMB > 10)status.BOMB = 10;
+		else status.BOMB = value;
+		break;
+	case 2:
+		if (status.POWER >= 100) status.POWER = 100;
+		else status.POWER = value;
+		break;
+	case 3:
+		status.COUNTINUE = value;
+		break;
+	default:
+		break;
+	}
+}
+
 int player::InitLoadGraph(int num) {
 	switch (num) {
 	case 0:

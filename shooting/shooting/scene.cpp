@@ -13,7 +13,7 @@ void scene::initialize() {
 	//Ç†Ç∆Ç≈ïœçX
 	x = 0;
 	y = 0;
-
+	alive = true;
 	
 }
 
@@ -34,3 +34,9 @@ void scene::update_late() {
 
 }
 
+void scene::update_ALT() {
+	time++;
+	if (!alive)finalize();
+}
+
+bool scene::get_alive() { return alive; }

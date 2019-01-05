@@ -1,4 +1,5 @@
-#include"game_scene.hpp"
+//#include"game_scene.hpp"
+#include"debug_zone.hpp"
 
 class Game {
 public:
@@ -7,10 +8,12 @@ public:
 	bool alive;
 	void all();
 private:
-	scene* sc;
+	std::vector<scene*> sc;
 	void initialize();
 	void finalize();
 	void update();
 	void draw();
 	void update_late();
+
+	int scene_num;
 };

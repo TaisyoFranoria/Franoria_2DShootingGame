@@ -149,6 +149,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="debug_zone.cpp" />
     <ClCompile Include="game_scene.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="player.cpp" />
@@ -157,6 +158,7 @@
     <ClCompile Include="UI.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="debug_zone.hpp" />
     <ClInclude Include="game_scene.hpp" />
     <ClInclude Include="player.hpp" />
     <ClInclude Include="scene.hpp" />

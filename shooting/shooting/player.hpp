@@ -32,5 +32,6 @@ public:
 
 	int get_point(int num);
 	int get_status(int num);
+	void set_status(int num,int value);
 	int InitLoadGraph(int num);
 };

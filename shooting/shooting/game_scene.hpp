@@ -5,20 +5,23 @@
 #include"player.hpp"
 #include"UI.hpp"
 
+#define GAME_WIDTH (850)
+#define GAME_WIDTH (710)
+
 class GameScene:public scene {
 public:
 	GameScene();
-	~GameScene();
-	void initialize();
-	void finalize();
+	virtual ~GameScene();
+	virtual void initialize();
+	virtual void finalize();
 
-	void update();
-	void draw();
-	void update_late();
+	virtual void update();
+	virtual void draw();
+	virtual void update_late();
 
 	float get_time();
 	int get_xy(int num);
-private:
+protected:
 	player* pl;
 	UI_gamescene* UI;
 };
