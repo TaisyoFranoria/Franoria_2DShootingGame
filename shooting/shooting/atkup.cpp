@@ -15,4 +15,5 @@ atkup::~atkup() {
 void atkup::onColl(player* pl) {
 	pl->set_status(2, pl->get_status(2) + 2);
 	alive = false;
+	pl_up = false;
 }

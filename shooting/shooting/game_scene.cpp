@@ -46,9 +46,10 @@ void GameScene::draw() {
 }
 
 void GameScene::draw_abs() {
+	for (int i = 0, n = (unsigned)(sizeof(Aup) / sizeof(Aup[0])); i < n; i++)Aup[i]->draw();
 	pl->draw();
 	for (int i = 0, n = (unsigned)(sizeof(pl_Bull) / sizeof(pl_Bull[0])); i < n; i++) pl_Bull[i]->draw();
-	for (int i = 0, n = (unsigned)(sizeof(Aup) / sizeof(Aup[0])); i < n; i++)Aup[i]->draw();
+	
 }
 
 void GameScene::update_late() {
