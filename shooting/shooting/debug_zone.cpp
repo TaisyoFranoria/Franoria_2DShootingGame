@@ -18,7 +18,7 @@ void debug_zone::update() {
 	if (CheckHitKey(KEY_INPUT_3))pl_Bull[0]->shoot(800,700);
 	if (CheckHitKey(KEY_INPUT_ESCAPE))alive = false;
 
-	if (time % 20 == 0) { Aup[atkItemcount]->spawn(100,100); atkItemcount++; }
+	if (time % 20 == 0) { Item[Itemcount]->spawn(100,100); Itemcount++; }
 }
 
 void debug_zone::draw() {

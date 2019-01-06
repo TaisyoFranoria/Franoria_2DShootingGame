@@ -16,7 +16,7 @@ void GameScene::initialize() {
 
 	pl = new player();
 	for (int i = 0, n = (unsigned)(sizeof(pl_Bull) / sizeof(pl_Bull[0])); i < n; i++)pl_Bull[i] = new shikimi_shot();
-	for (int i = 0, n = (unsigned)(sizeof(Aup) / sizeof(Aup[0])); i < n; i++)Aup[i] = new atkup();
+	for (int i = 0, n = (unsigned)(sizeof(Item) / sizeof(Item[0])); i < n; i++)Item[i] = new atkup();
 	bullet_count = 0;
 	UI = new UI_gamescene(pl);
 	bg = new BackGraph();
@@ -25,7 +25,7 @@ void GameScene::initialize() {
 void GameScene::finalize() {
 	delete pl;
 	for (int i = 0, n = (unsigned)(sizeof(pl_Bull) / sizeof(pl_Bull[0])); i < n; i++)delete pl_Bull[i];
-	for (int i = 0, n = (unsigned)(sizeof(Aup) / sizeof(Aup[0])); i < n; i++)delete Aup[i];
+	for (int i = 0, n = (unsigned)(sizeof(Item) / sizeof(Item[0])); i < n; i++)delete Item[i];
 	delete UI;
 	delete bg;
 }
@@ -37,7 +37,7 @@ void GameScene::update() {
 void GameScene::update_abs() {
 	pl->update();
 	if (time%3==0&&pl->get_now(1))shot_emit(pl->get_point(0), pl->get_point(1), pl->get_status(2), pl->get_now(0));
-	for (int i = 0, n = (unsigned)(sizeof(Aup) / sizeof(Aup[0])); i < n; i++)Aup[i]->update(pl);
+	for (int i = 0, n = (unsigned)(sizeof(Item) / sizeof(Item[0])); i < n; i++)Item[i]->update(pl);
 	for (int i = 0, n = (unsigned)(sizeof(pl_Bull) / sizeof(pl_Bull[0])); i < n; i++) pl_Bull[i]->update();
 }
 
@@ -46,7 +46,7 @@ void GameScene::draw() {
 }
 
 void GameScene::draw_abs() {
-	for (int i = 0, n = (unsigned)(sizeof(Aup) / sizeof(Aup[0])); i < n; i++)Aup[i]->draw();
+	for (int i = 0, n = (unsigned)(sizeof(Item) / sizeof(Item[0])); i < n; i++)Item[i]->draw();
 	pl->draw();
 	for (int i = 0, n = (unsigned)(sizeof(pl_Bull) / sizeof(pl_Bull[0])); i < n; i++) pl_Bull[i]->draw();
 	
@@ -63,7 +63,7 @@ void GameScene::update_late() {
 	if (pl->get_point(1) < 0)pl->set_point(pl->get_point(0), 0);
 
 	if (bullet_count >= (unsigned)(sizeof(pl_Bull) / sizeof(pl_Bull[0])))bullet_count = 0;
-	if (atkItemcount >= (unsigned)(sizeof(Aup) / sizeof(Aup[0])))atkItemcount = 0;
+	if (Itemcount >= (unsigned)(sizeof(Item) / sizeof(Item[0])))Itemcount = 0;
 	update_ALT();
 }
 

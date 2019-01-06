@@ -32,8 +32,8 @@ protected:
 	player* pl;
 	shikimi_shot* pl_Bull[300];
 	int bullet_count;
-	atkup* Aup[50];
-	int atkItemcount;
+	ItemBase* Item[50];
+	int Itemcount;
 	UI_gamescene* UI;
 	BackGraph* bg;
 };

@@ -152,6 +152,7 @@
     <ClCompile Include="atkup.cpp" />
     <ClCompile Include="BackGraph.cpp" />
     <ClCompile Include="debug_zone.cpp" />
+    <ClCompile Include="EnemyBase.cpp" />
     <ClCompile Include="game_scene.cpp" />
     <ClCompile Include="ItemBase.cpp" />
     <ClCompile Include="main.cpp" />
@@ -166,6 +167,7 @@
     <ClInclude Include="atkup.hpp" />
     <ClInclude Include="BackGraph.hpp" />
     <ClInclude Include="debug_zone.hpp" />
+    <ClInclude Include="EnemyBase.hpp" />
     <ClInclude Include="game_scene.hpp" />
     <ClInclude Include="ItemBase.hpp" />
     <ClInclude Include="player.hpp" />

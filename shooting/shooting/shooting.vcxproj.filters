@@ -46,6 +46,15 @@
     <Filter Include="ヘッダー ファイル\player\shot">
       <UniqueIdentifier>{001ee23a-2789-4a71-ae7a-242277a88667}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Enemy\Enemy_shot">
+      <UniqueIdentifier>{8ea7cb2d-fe3b-4d8f-827d-341aa9bfec4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Enemy">
+      <UniqueIdentifier>{636a80dc-003e-4c70-9a02-cd5c371bb650}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Enemy\Enemy_shot">
+      <UniqueIdentifier>{3b2ab659-594a-466a-82fe-bd5a7465e0ea}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -84,6 +93,9 @@
     <ClCompile Include="atkup.cpp">
       <Filter>ソース ファイル\Item</Filter>
     </ClCompile>
+    <ClCompile Include="EnemyBase.cpp">
+      <Filter>ソース ファイル\Enemy</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.hpp">
@@ -118,6 +130,9 @@
     </ClInclude>
     <ClInclude Include="shikimi_shot.hpp">
       <Filter>ヘッダー ファイル\player\shot</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyBase.hpp">
+      <Filter>ヘッダー ファイル\Enemy</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
