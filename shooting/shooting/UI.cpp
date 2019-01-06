@@ -19,7 +19,7 @@ void UI_gamescene::initialize(player* pl) {
 }
 
 void UI_gamescene::init_graph() {
-	gra.push_back(LoadGraph("img/UI/Big_UI.png"));
+	gra.push_back(LoadGraph("img/UI/Big_UI2.png"));
 	gra.push_back(LoadGraph("img/UI/g_pw.png"));
 	gra.push_back(LoadGraph("img/UI/g_life.png"));
 }

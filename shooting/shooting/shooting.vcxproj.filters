@@ -96,6 +96,9 @@
     <ClCompile Include="EnemyBase.cpp">
       <Filter>ソース ファイル\Enemy</Filter>
     </ClCompile>
+    <ClCompile Include="Unknown.cpp">
+      <Filter>ソース ファイル\Enemy</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.hpp">
@@ -132,6 +135,9 @@
       <Filter>ヘッダー ファイル\player\shot</Filter>
     </ClInclude>
     <ClInclude Include="EnemyBase.hpp">
+      <Filter>ヘッダー ファイル\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Unknown.hpp">
       <Filter>ヘッダー ファイル\Enemy</Filter>
     </ClInclude>
   </ItemGroup>

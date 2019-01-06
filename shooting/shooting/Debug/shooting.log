@@ -1,7 +1,2 @@
-﻿  Game.cpp
-f:\ドキュメント\franoria_2dshootinggame\shooting\shooting\game.cpp(35): warning C4018: '>=': signed と unsigned の数値を比較しようとしました。
-  debug_zone.cpp
-  game_scene.cpp
-  main.cpp
-  コードを生成中...
+﻿  Unknown.cpp
   shooting.vcxproj -> F:\ドキュメント\Franoria_2DShootingGame\shooting\Debug\shooting.exe
