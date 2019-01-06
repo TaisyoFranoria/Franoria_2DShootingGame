@@ -6,4 +6,5 @@ public:
 	debug_zone();
 	~debug_zone();
 	void update();
+	void draw();
 };

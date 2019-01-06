@@ -4,9 +4,10 @@
 #include"scene.hpp"
 #include"player.hpp"
 #include"UI.hpp"
+#include"BackGraph.hpp"
 
 #define GAME_WIDTH (850)
-#define GAME_WIDTH (710)
+#define GAME_HIGHT (710)
 
 class GameScene:public scene {
 public:
@@ -24,4 +25,5 @@ public:
 protected:
 	player* pl;
 	UI_gamescene* UI;
+	BackGraph* bg;
 };

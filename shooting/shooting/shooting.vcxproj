@@ -149,8 +149,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BackGraph.cpp" />
     <ClCompile Include="debug_zone.cpp" />
     <ClCompile Include="game_scene.cpp" />
+    <ClCompile Include="ItemBase.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="scene.cpp" />
@@ -158,8 +160,11 @@
     <ClCompile Include="UI.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="atkup.hpp" />
+    <ClInclude Include="BackGraph.hpp" />
     <ClInclude Include="debug_zone.hpp" />
     <ClInclude Include="game_scene.hpp" />
+    <ClInclude Include="ItemBase.hpp" />
     <ClInclude Include="player.hpp" />
     <ClInclude Include="scene.hpp" />
     <ClInclude Include="Game.hpp" />

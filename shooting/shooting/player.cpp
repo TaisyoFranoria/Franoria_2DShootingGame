@@ -11,8 +11,9 @@ player::~player() {
 void player::initialize() {
 	x = 350;
 	y = 600;
-	hx = x + (PLAYER_SIZE / 2);
-	hy = y + (PLAYER_SIZE / 2);
+	hx = x + PLAYER_RADIUS;
+	hy = y + PLAYER_RADIUS;
+
 	for (int i = 0, n = (unsigned)(sizeof(gra) / sizeof(gra[0])); i < n; i++)gra[i] = InitLoadGraph(i);
 	move_num = 2;
 	anim_counter = 1;
@@ -33,7 +34,7 @@ void player::update() {
 
 	//テスト　あとでバリバリ変える
 	
-	if (CheckHitKey(KEY_INPUT_RSHIFT)) slow = true;
+	if (CheckHitKey(KEY_INPUT_LSHIFT)) slow = true;
 	else slow = false;
 
 	if (CheckHitKey(KEY_INPUT_RIGHT)) {
@@ -121,6 +122,11 @@ void player::set_status(int num, int value) {
 	}
 }
 
+void player::set_point(int x, int y) {
+	this->x = x;
+	this->y = y;
+}
+
 int player::InitLoadGraph(int num) {
 	switch (num) {
 	case 0:
@@ -146,3 +152,5 @@ int player::DrawPlayerGraph(int num) {
 		return -1;
 	}
 }
+
+

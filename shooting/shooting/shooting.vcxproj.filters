@@ -13,12 +13,30 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="ソース ファイル\scene">
+      <UniqueIdentifier>{5e869bec-c5e4-498a-9e4b-25b2e9f8ae56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\scene\gamescene">
+      <UniqueIdentifier>{c3385677-28b2-4770-b534-880fedd72bd4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Item">
+      <UniqueIdentifier>{6fbfb632-77fb-40ab-993d-507c716239b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Enemy">
+      <UniqueIdentifier>{6c7d4610-260d-4b12-a78b-6c079a66861b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\scene">
+      <UniqueIdentifier>{f457191b-2933-4b86-95f3-5e67343cf513}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\scene\gamescene">
+      <UniqueIdentifier>{b07daaee-874d-4e11-b78b-212bf919d5d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Item">
+      <UniqueIdentifier>{cf89726c-6bbe-4c6b-8c7c-9870df762ad9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="scene.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="Game.cpp">
@@ -27,34 +45,52 @@
     <ClCompile Include="player.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="game_scene.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="UI.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="BackGraph.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="scene.cpp">
+      <Filter>ソース ファイル\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="game_scene.cpp">
+      <Filter>ソース ファイル\scene\gamescene</Filter>
+    </ClCompile>
     <ClCompile Include="debug_zone.cpp">
-      <Filter>ヘッダー ファイル</Filter>
+      <Filter>ソース ファイル\scene\gamescene</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemBase.cpp">
+      <Filter>ソース ファイル\Item</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="scene.hpp">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="player.hpp">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="game_scene.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="UI.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="BackGraph.hpp">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="game_scene.hpp">
+      <Filter>ヘッダー ファイル\scene\gamescene</Filter>
+    </ClInclude>
+    <ClInclude Include="scene.hpp">
+      <Filter>ヘッダー ファイル\scene</Filter>
+    </ClInclude>
     <ClInclude Include="debug_zone.hpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ヘッダー ファイル\scene\gamescene</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemBase.hpp">
+      <Filter>ヘッダー ファイル\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="atkup.hpp">
+      <Filter>ヘッダー ファイル\Item</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
