@@ -5,7 +5,5 @@ class atkup :public ItemBase {
 public :
 	atkup();
 	~atkup();
-	void update();
-	void draw();
-	void onColl();
+	void onColl(player* pl);
 };

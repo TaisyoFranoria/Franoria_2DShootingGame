@@ -20,6 +20,7 @@ private:
 		int COUNTINUE;
 	}status;
 	bool slow;
+	bool shot;
 	int DrawPlayerGraph(int num);
 public:
 	player();
@@ -34,6 +35,7 @@ public:
 
 	int get_point(int num);
 	int get_status(int num);
+	bool get_now(int num);
 	void set_status(int num,int value);
 	void set_point(int x,int y);
 	int InitLoadGraph(int num);

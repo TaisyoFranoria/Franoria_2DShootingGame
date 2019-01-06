@@ -17,7 +17,7 @@ public:
 
 	bool get_alive();
 protected:
-	float time;
+	int time;
 	int x, y;
 	bool alive;
 };

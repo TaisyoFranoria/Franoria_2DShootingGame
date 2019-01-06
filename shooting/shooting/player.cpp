@@ -18,6 +18,7 @@ void player::initialize() {
 	move_num = 2;
 	anim_counter = 1;
 	slow = false;
+	shot = false;
 
 	status.LIFE = 100;
 	status.BOMB = 2;
@@ -36,6 +37,9 @@ void player::update() {
 	
 	if (CheckHitKey(KEY_INPUT_LSHIFT)) slow = true;
 	else slow = false;
+
+	if (CheckHitKey(KEY_INPUT_Z)) shot = true;
+	else shot = false;
 
 	if (CheckHitKey(KEY_INPUT_RIGHT)) {
 		if (slow) x += 5;
@@ -78,6 +82,10 @@ int player::get_point(int num) {
 		return x;
 	case 1:
 		return y;
+	case 2:
+		return hx;
+	case 3:
+		return hy;
 	default:
 		return -1;
 	//ÉGÉâÅ[
@@ -100,6 +108,16 @@ int player::get_status(int num) {
 	}
 }
 
+bool player::get_now(int num) {
+	switch (num) {
+	case 0:
+		return slow;
+	case 1:
+		return shot;
+	default:
+		return false;
+	}
+}
 void player::set_status(int num, int value) {
 	switch (num) {
 	case 0:

@@ -34,15 +34,24 @@
     <Filter Include="ヘッダー ファイル\Item">
       <UniqueIdentifier>{cf89726c-6bbe-4c6b-8c7c-9870df762ad9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Player">
+      <UniqueIdentifier>{c077e8b5-3f7a-4492-b775-e72192dd215f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Player\Shot">
+      <UniqueIdentifier>{82eb2c3b-6f51-4f86-8d95-511589763abc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\player">
+      <UniqueIdentifier>{806ce2f7-af32-4e91-b2d9-ad635bb86fe6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\player\shot">
+      <UniqueIdentifier>{001ee23a-2789-4a71-ae7a-242277a88667}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="Game.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="player.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="UI.cpp">
@@ -63,12 +72,21 @@
     <ClCompile Include="ItemBase.cpp">
       <Filter>ソース ファイル\Item</Filter>
     </ClCompile>
+    <ClCompile Include="player.cpp">
+      <Filter>ソース ファイル\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="shot.cpp">
+      <Filter>ソース ファイル\Player\Shot</Filter>
+    </ClCompile>
+    <ClCompile Include="shikimi_shot.cpp">
+      <Filter>ソース ファイル\Player\Shot</Filter>
+    </ClCompile>
+    <ClCompile Include="atkup.cpp">
+      <Filter>ソース ファイル\Item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.hpp">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="player.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="UI.hpp">
@@ -91,6 +109,15 @@
     </ClInclude>
     <ClInclude Include="atkup.hpp">
       <Filter>ヘッダー ファイル\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="player.hpp">
+      <Filter>ヘッダー ファイル\player</Filter>
+    </ClInclude>
+    <ClInclude Include="shot.hpp">
+      <Filter>ヘッダー ファイル\player\shot</Filter>
+    </ClInclude>
+    <ClInclude Include="shikimi_shot.hpp">
+      <Filter>ヘッダー ファイル\player\shot</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

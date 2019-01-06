@@ -1,14 +1,2 @@
-﻿  debug_zone.cpp
-  game_scene.cpp
-  ItemBase.cpp
-c:\users\taisy\documents\-d-\shooting\shooting\itembase.cpp(13): warning C4390: ';': 制御が空の文が見つかりました。意図した記述でしょうか?
-  main.cpp
-  player.cpp
-  scene.cpp
-  Game.cpp
-c:\users\taisy\documents\-d-\shooting\shooting\game.cpp(35): warning C4018: '>=': signed と unsigned の数値を比較しようとしました。
-  UI.cpp
-c:\users\taisy\documents\-d-\shooting\shooting\ui.cpp(39): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-c:\users\taisy\documents\-d-\shooting\shooting\ui.cpp(40): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-  コードを生成中...
-  shooting.vcxproj -> C:\Users\taisy\Documents\-D-\shooting\Debug\shooting.exe
+﻿  atkup.cpp
+  shooting.vcxproj -> F:\ドキュメント\Franoria_2DShootingGame\shooting\Debug\shooting.exe

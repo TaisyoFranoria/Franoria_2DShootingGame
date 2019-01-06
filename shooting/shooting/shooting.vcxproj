@@ -149,6 +149,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="atkup.cpp" />
     <ClCompile Include="BackGraph.cpp" />
     <ClCompile Include="debug_zone.cpp" />
     <ClCompile Include="game_scene.cpp" />
@@ -157,6 +158,8 @@
     <ClCompile Include="player.cpp" />
     <ClCompile Include="scene.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="shikimi_shot.cpp" />
+    <ClCompile Include="shot.cpp" />
     <ClCompile Include="UI.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -168,6 +171,8 @@
     <ClInclude Include="player.hpp" />
     <ClInclude Include="scene.hpp" />
     <ClInclude Include="Game.hpp" />
+    <ClInclude Include="shikimi_shot.hpp" />
+    <ClInclude Include="shot.hpp" />
     <ClInclude Include="UI.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
