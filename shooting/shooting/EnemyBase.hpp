@@ -3,6 +3,9 @@
 #include<vector>
 #include<string>
 
+#define PI    (3.1415926535897932384626433832795f)
+
+
 class EnemyBase {
 public:
 	EnemyBase();
@@ -19,6 +22,7 @@ protected:
 	bool alive;
 	bool shot;
 	int hp, atk;
+	int r;
 
 	void InitGraph(std::string file);
 };

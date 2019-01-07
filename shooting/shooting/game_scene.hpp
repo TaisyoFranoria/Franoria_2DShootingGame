@@ -1,12 +1,14 @@
 #pragma once
 #include<Dxlib.h>
 #include<iostream>
+#include<vector>
 #include"scene.hpp"
 #include"player.hpp"
 #include"UI.hpp"
 #include"BackGraph.hpp"
 #include"shikimi_shot.hpp"
 #include"atkup.hpp"
+#include"Unknown.hpp"
 
 #define GAME_WIDTH (850)
 #define GAME_HIGHT (710)
@@ -28,7 +30,9 @@ public:
 
 	int get_time();
 	int get_xy(int num);
+
 protected:
+	std::vector<Unknown_*> enm;
 	player* pl;
 	shikimi_shot* pl_Bull[300];
 	int bullet_count;
@@ -36,4 +40,6 @@ protected:
 	int Itemcount;
 	UI_gamescene* UI;
 	BackGraph* bg;
+
+	int phase;
 };

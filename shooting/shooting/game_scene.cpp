@@ -15,6 +15,7 @@ void GameScene::initialize() {
 	y = 0;
 
 	pl = new player();
+	for (int i = 0; i < 5; i++)enm.push_back(new Unknown_());
 	for (int i = 0, n = (unsigned)(sizeof(pl_Bull) / sizeof(pl_Bull[0])); i < n; i++)pl_Bull[i] = new shikimi_shot();
 	for (int i = 0, n = (unsigned)(sizeof(Item) / sizeof(Item[0])); i < n; i++)Item[i] = new atkup();
 	bullet_count = 0;
@@ -24,6 +25,7 @@ void GameScene::initialize() {
 
 void GameScene::finalize() {
 	delete pl;
+	for (int i = 0, n = (unsigned)enm.size(); i < n;i++)delete enm[i];
 	for (int i = 0, n = (unsigned)(sizeof(pl_Bull) / sizeof(pl_Bull[0])); i < n; i++)delete pl_Bull[i];
 	for (int i = 0, n = (unsigned)(sizeof(Item) / sizeof(Item[0])); i < n; i++)delete Item[i];
 	delete UI;
@@ -35,10 +37,14 @@ void GameScene::update() {
 }
 
 void GameScene::update_abs() {
+	for (int i = 0, n = (unsigned)enm.size(); i < n; i++)enm[i]->update();
 	pl->update();
 	if (time%3==0&&pl->get_now(1))shot_emit(pl->get_point(0), pl->get_point(1), pl->get_status(2), pl->get_now(0));
 	for (int i = 0, n = (unsigned)(sizeof(Item) / sizeof(Item[0])); i < n; i++)Item[i]->update(pl);
-	for (int i = 0, n = (unsigned)(sizeof(pl_Bull) / sizeof(pl_Bull[0])); i < n; i++) pl_Bull[i]->update();
+	for (int i = 0, n = (unsigned)(sizeof(pl_Bull) / sizeof(pl_Bull[0])); i < n; i++) {
+		pl_Bull[i]->update();
+		for (int j = 0, n2 = (unsigned)enm.size(); j < n2; j++)if(pl_Bull[i]->alive)pl_Bull[i]->enemy_coll(enm[j]);
+	}
 }
 
 void GameScene::draw() {
@@ -46,6 +52,7 @@ void GameScene::draw() {
 }
 
 void GameScene::draw_abs() {
+	for (int i = 0, n = (unsigned)enm.size(); i < n; i++)enm[i]->draw();
 	for (int i = 0, n = (unsigned)(sizeof(Item) / sizeof(Item[0])); i < n; i++)Item[i]->draw();
 	pl->draw();
 	for (int i = 0, n = (unsigned)(sizeof(pl_Bull) / sizeof(pl_Bull[0])); i < n; i++) pl_Bull[i]->draw();

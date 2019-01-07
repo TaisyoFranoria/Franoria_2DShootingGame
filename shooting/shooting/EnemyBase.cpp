@@ -1,7 +1,7 @@
 #include"EnemyBase.hpp"
 
 EnemyBase::EnemyBase() {
-	x, y, gra, anim_length ,hp,atk= 0;
+	x, y, gra, anim_length ,hp,atk,r= 0;
 	alive, shot = false;
 }
 
@@ -15,6 +15,8 @@ int EnemyBase::get_EnemyValue(int num) {
 		return x;
 	case 1:
 		return y;
+	case 2:
+		return r;
 	default :
 		return -1;
 	}
@@ -32,8 +34,8 @@ bool EnemyBase::get_EnemyStatus(int num) {
 }
 
 void EnemyBase::Damage(int value) {
-	hp -= value;
-	if (hp <= 0)alive = false;
+	hp = hp - value;
+	//if (hp <= 0)alive = false;
 }
 
 void EnemyBase::InitGraph(std::string filepath) {
@@ -43,4 +45,5 @@ void EnemyBase::InitGraph(std::string filepath) {
 		if (handle == -1)break;
 		else gra.push_back(handle);
 	}
+	if (gra.size() == 0)DebugBreak();
 }

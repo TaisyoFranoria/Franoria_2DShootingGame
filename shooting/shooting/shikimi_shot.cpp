@@ -3,6 +3,7 @@
 shikimi_shot::shikimi_shot() {
 	x = 0;
 	y = 0;
+	r = 11;//îºåaÅñ2Ç≠ÇÁÇ¢
 	alive = false;
 	gra = LoadGraph("img/shot/shikimi_shot01.png");
 }

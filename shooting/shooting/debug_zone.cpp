@@ -1,5 +1,6 @@
 #include"debug_zone.hpp"
 
+
 debug_zone::debug_zone() {
 
 }
@@ -20,6 +21,8 @@ void debug_zone::update() {
 
 	if (time % 100 == 0) { Item[Itemcount]->spawn(100,100); Itemcount++; }
 	if (time % 150 == 0) { Item[Itemcount]->spawn(600, 100); Itemcount++; }
+	if (time == 100)enm[0]->spawn(300,400);
+
 }
 
 void debug_zone::draw() {

@@ -20,10 +20,22 @@ void shot::update() {
 
 }
 
+void shot::enemy_coll(EnemyBase* ene) {
+	int xtox = x - ene->get_EnemyValue(0);
+	int ytoy = y - ene->get_EnemyValue(1);
+	int rtor = r + ene->get_EnemyValue(2);
+	if(xtox*xtox+ytoy*ytoy<rtor*rtor)onColl(ene);
+}
+
 void shot::draw() {
 	if(alive) DrawRotaGraph(x,y,1.5,PI*2,gra,TRUE);
 }
 
 void shot::onColl() {
 
+}
+
+void shot::onColl(EnemyBase* ene) {
+	ene->Damage(20);
+	alive = false;
 }
