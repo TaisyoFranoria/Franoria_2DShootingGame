@@ -19,6 +19,7 @@ protected:
 	int x, y;
 	std::vector<int> gra;
 	int anim_length;
+	int animState;
 	bool alive;
 	bool shot;
 	int hp, atk;

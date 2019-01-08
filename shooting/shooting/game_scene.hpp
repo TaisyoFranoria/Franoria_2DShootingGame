@@ -9,6 +9,7 @@
 #include"shikimi_shot.hpp"
 #include"atkup.hpp"
 #include"Unknown.hpp"
+#include"shikimi_shotEfects.hpp"
 
 #define GAME_WIDTH (850)
 #define GAME_HIGHT (710)
@@ -35,6 +36,9 @@ protected:
 	std::vector<Unknown_*> enm;
 	player* pl;
 	shikimi_shot* pl_Bull[300];
+	std::vector<player_shotefect*> p_efk;
+	int pefk_count;
+	int pefk_length;
 	int bullet_count;
 	ItemBase* Item[50];
 	int Itemcount;

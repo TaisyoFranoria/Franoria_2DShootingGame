@@ -20,11 +20,13 @@ void shot::update() {
 
 }
 
-void shot::enemy_coll(EnemyBase* ene) {
-	int xtox = x - ene->get_EnemyValue(0);
-	int ytoy = y - ene->get_EnemyValue(1);
-	int rtor = r + ene->get_EnemyValue(2);
-	if(xtox*xtox+ytoy*ytoy<rtor*rtor)onColl(ene);
+void shot::enemy_coll(EnemyBase* ene,EfectBase* efk) {
+	if (ene->get_EnemyStatus(0)) {
+		int xtox = x - ene->get_EnemyValue(0);
+		int ytoy = y - ene->get_EnemyValue(1);
+		int rtor = r + ene->get_EnemyValue(2);
+		if (xtox*xtox + ytoy * ytoy < rtor*rtor)onColl(ene, efk);
+	}
 }
 
 void shot::draw() {
@@ -35,7 +37,8 @@ void shot::onColl() {
 
 }
 
-void shot::onColl(EnemyBase* ene) {
+void shot::onColl(EnemyBase* ene,EfectBase* efk) {
 	ene->Damage(20);
+	efk->spawn(x,y);
 	alive = false;
 }

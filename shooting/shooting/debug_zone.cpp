@@ -22,6 +22,10 @@ void debug_zone::update() {
 	if (time % 100 == 0) { Item[Itemcount]->spawn(100,100); Itemcount++; }
 	if (time % 150 == 0) { Item[Itemcount]->spawn(600, 100); Itemcount++; }
 	if (time == 100)enm[0]->spawn(300,400);
+	if (time == 200)enm[1]->spawn(400, 400);
+	if (time == 300)enm[2]->spawn(500, 400);
+	if (time == 310)enm[3]->spawn(400, 400);
+	if (time == 320)enm[4]->spawn(4300, 400);
 
 }
 
@@ -31,7 +35,6 @@ void debug_zone::draw() {
 	DrawFormatString(0, 0, 0xFFFFFF, "Running...");
 	DrawFormatString(0, 16, 0xFFFFFF, "I—¹‚·‚é‚É‚ÍescƒL[‚ð‰Ÿ‚µ‚Ä‚­‚¾‚³‚¢");
 	DrawFormatString(0,32,0xFFFFFF,"X:%d Y:%d",pl->get_point(0),pl->get_point(1));
-	if (pl_Bull[0]->alive)DrawFormatString(0, 48, 0xFFFFFF, "shoting");
 	//DrawFormatString(0, 64, 0xFFFFFF, "bullet_count:%d",bullet_count);
 	//DrawFormatString(0, 80, 0xFFFFFF, "bullet_length:%d", (unsigned)(sizeof(pl_Bull) / sizeof(pl_Bull[0])));
 }

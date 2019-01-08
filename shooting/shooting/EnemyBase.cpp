@@ -1,8 +1,8 @@
 #include"EnemyBase.hpp"
 
 EnemyBase::EnemyBase() {
-	x, y, gra, anim_length ,hp,atk,r= 0;
-	alive, shot = false;
+	x, y, gra, anim_length, animState, hp, atk, r = 0;
+	alive,shot = false;
 }
 
 EnemyBase::~EnemyBase() {
@@ -35,7 +35,6 @@ bool EnemyBase::get_EnemyStatus(int num) {
 
 void EnemyBase::Damage(int value) {
 	hp = hp - value;
-	//if (hp <= 0)alive = false;
 }
 
 void EnemyBase::InitGraph(std::string filepath) {

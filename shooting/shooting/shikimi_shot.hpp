@@ -1,5 +1,6 @@
 #pragma once
 #include"shot.hpp"
+#include"shikimi_shotEfects.hpp"
 
 class shikimi_shot:public shot {
 public :

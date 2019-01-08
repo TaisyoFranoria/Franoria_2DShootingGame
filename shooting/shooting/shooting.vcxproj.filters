@@ -55,6 +55,15 @@
     <Filter Include="ソース ファイル\Player\Shot">
       <UniqueIdentifier>{82eb2c3b-6f51-4f86-8d95-511589763abc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Efect">
+      <UniqueIdentifier>{a6e60f99-beb7-4860-8ef2-2a0a34c815a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Efect">
+      <UniqueIdentifier>{146bb064-8abe-4773-9ea8-a591fd785745}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Efect\player">
+      <UniqueIdentifier>{fc6264d3-d1b8-4e7b-96d2-991783e66d91}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -99,6 +108,15 @@
     <ClCompile Include="Unknown.cpp">
       <Filter>ソース ファイル\Enemy</Filter>
     </ClCompile>
+    <ClCompile Include="EfectBase.cpp">
+      <Filter>ソース ファイル\Efect</Filter>
+    </ClCompile>
+    <ClCompile Include="shikimi_shotEfects.cpp">
+      <Filter>ソース ファイル\Efect</Filter>
+    </ClCompile>
+    <ClCompile Include="player_shotEfect.cpp">
+      <Filter>ソース ファイル\Efect</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.hpp">
@@ -139,6 +157,15 @@
     </ClInclude>
     <ClInclude Include="Unknown.hpp">
       <Filter>ヘッダー ファイル\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="EfectBase.hpp">
+      <Filter>ヘッダー ファイル\Efect</Filter>
+    </ClInclude>
+    <ClInclude Include="shikimi_shotEfects.hpp">
+      <Filter>ヘッダー ファイル\Efect\player</Filter>
+    </ClInclude>
+    <ClInclude Include="player_shotEfect.hpp">
+      <Filter>ヘッダー ファイル\Efect\player</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

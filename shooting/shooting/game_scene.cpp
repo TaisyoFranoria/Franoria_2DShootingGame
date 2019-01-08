@@ -15,6 +15,9 @@ void GameScene::initialize() {
 	y = 0;
 
 	pl = new player();
+	for (int i = 0; i < 8; i++)p_efk.push_back(new shikimi_shotEfects());//0~8　プレイヤーのショット
+	pefk_count = 0;
+	pefk_length = (unsigned)p_efk.size();
 	for (int i = 0; i < 5; i++)enm.push_back(new Unknown_());
 	for (int i = 0, n = (unsigned)(sizeof(pl_Bull) / sizeof(pl_Bull[0])); i < n; i++)pl_Bull[i] = new shikimi_shot();
 	for (int i = 0, n = (unsigned)(sizeof(Item) / sizeof(Item[0])); i < n; i++)Item[i] = new atkup();
@@ -25,6 +28,7 @@ void GameScene::initialize() {
 
 void GameScene::finalize() {
 	delete pl;
+	for (int i = 0, n = (unsigned)p_efk.size(); i < n; i++)delete p_efk[i];
 	for (int i = 0, n = (unsigned)enm.size(); i < n;i++)delete enm[i];
 	for (int i = 0, n = (unsigned)(sizeof(pl_Bull) / sizeof(pl_Bull[0])); i < n; i++)delete pl_Bull[i];
 	for (int i = 0, n = (unsigned)(sizeof(Item) / sizeof(Item[0])); i < n; i++)delete Item[i];
@@ -43,8 +47,10 @@ void GameScene::update_abs() {
 	for (int i = 0, n = (unsigned)(sizeof(Item) / sizeof(Item[0])); i < n; i++)Item[i]->update(pl);
 	for (int i = 0, n = (unsigned)(sizeof(pl_Bull) / sizeof(pl_Bull[0])); i < n; i++) {
 		pl_Bull[i]->update();
-		for (int j = 0, n2 = (unsigned)enm.size(); j < n2; j++)if(pl_Bull[i]->alive)pl_Bull[i]->enemy_coll(enm[j]);
+		for (int j = 0, n2 = (unsigned)enm.size(); j < n2; j++)if (pl_Bull[i]->alive) { pl_Bull[i]->enemy_coll(enm[j], p_efk[pefk_count]); pefk_count++; if (pefk_count >= pefk_length)pefk_count = 0; };
 	}
+	for (int i = 0, n = (unsigned)p_efk.size(); i < n; i++)p_efk[i]->update();
+	if (bullet_count >= ((unsigned)(sizeof(pl_Bull) / sizeof(pl_Bull[0]) - 5)))bullet_count = 0;
 }
 
 void GameScene::draw() {
@@ -56,7 +62,7 @@ void GameScene::draw_abs() {
 	for (int i = 0, n = (unsigned)(sizeof(Item) / sizeof(Item[0])); i < n; i++)Item[i]->draw();
 	pl->draw();
 	for (int i = 0, n = (unsigned)(sizeof(pl_Bull) / sizeof(pl_Bull[0])); i < n; i++) pl_Bull[i]->draw();
-	
+	for (int i = 0, n = (unsigned)p_efk.size(); i < n; i++)p_efk[i]->draw();
 }
 
 void GameScene::update_late() {
@@ -75,21 +81,21 @@ void GameScene::update_late() {
 }
 
 void GameScene::shot_emit(int x, int y,int pw,bool slow) {
-	if (pw >= 100) {
+	if (pw > 100) {
 		if (slow) { pl_Bull[bullet_count]->shoot(x + 40, y); bullet_count++; }
 		else pl_Bull[bullet_count]->shoot(x+40, y); bullet_count++;
 	}
-	else if (pw >= 80) {
+	else if (pw > 80) {
 		if (slow) {}
 		else pl_Bull[bullet_count]->shoot(x+40, y); bullet_count++;
 	}
-	else if (pw >= 60) {
-		if (slow) {}
-		else pl_Bull[bullet_count]->shoot(x +40, y); bullet_count++;
+	else if (pw > 60) {
+		if (slow) { pl_Bull[bullet_count]->shoot(x + 30, y - 10); bullet_count++; pl_Bull[bullet_count]->shoot(x + 50, y - 10); bullet_count++; pl_Bull[bullet_count]->shoot(x + 40, y); bullet_count++; }
+		else { pl_Bull[bullet_count]->shoot(x + 10, y-10);  bullet_count++; pl_Bull[bullet_count]->shoot(x + 70, y-10); bullet_count++; pl_Bull[bullet_count]->shoot(x+40,y); bullet_count++; }
 	}
-	else if (pw >= 30) {
-		if (slow) {}
-		else pl_Bull[bullet_count]->shoot(x+40, y); bullet_count++;
+	else if (pw > 30) {
+		if (slow) { pl_Bull[bullet_count]->shoot(x + 30, y);  bullet_count++; pl_Bull[bullet_count]->shoot(x + 40, y); bullet_count++; }
+		else { pl_Bull[bullet_count]->shoot(x + 20, y); bullet_count++; pl_Bull[bullet_count]->shoot(x + 60, y); bullet_count++; }
 	}
 	else {
 		pl_Bull[bullet_count]->shoot(x+40,y); bullet_count++;

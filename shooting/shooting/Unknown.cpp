@@ -14,6 +14,20 @@ Unknown_::Unknown_() {
 	r = 32;
 }
 
+Unknown_::Unknown_(int x,int y,int hp,int atk) {
+	this->x = x;
+	this->y = y;
+	InitGraph("img/Enemy/Unknown/");
+	anim_length = (unsigned)gra.size();
+	alive = false;
+	shot = false;
+	move_lange = GetRand(500);
+	pt = GetRand(8);
+	this->hp = hp;
+	this->atk = atk;
+	r = 32;
+}
+
 Unknown_::~Unknown_() {
 	for (int i = 0, n = (unsigned)gra.size(); i < n; i++)DeleteGraph(gra[i]);
 }
