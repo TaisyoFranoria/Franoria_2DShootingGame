@@ -125,3 +125,10 @@ void Unknown_::spawn(int x, int y) {
 	this->y = y;
 	alive = true;
 }
+
+void Unknown_::respawn(int x,int y) {
+	this->x = x;
+	this->y = y;
+	alive = true;
+	hp = 9999;
+}

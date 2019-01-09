@@ -1,4 +1,2 @@
-﻿  game_scene.cpp
-f:\ドキュメント\franoria_2dshootinggame\shooting\shooting\shot.hpp(3): warning C4067: プリプロセッサ ディレクティブの後に余分な文字がありました - 改行が必要です
-f:\ドキュメント\franoria_2dshootinggame\shooting\shooting\shot.hpp(4): warning C4067: プリプロセッサ ディレクティブの後に余分な文字がありました - 改行が必要です
-  shooting.vcxproj -> F:\ドキュメント\Franoria_2DShootingGame\shooting\Debug\shooting.exe
+﻿  Unknown.cpp
+  shooting.vcxproj -> C:\Users\taisy\Documents\Franoria_2DShootingGame\shooting\Debug\shooting.exe

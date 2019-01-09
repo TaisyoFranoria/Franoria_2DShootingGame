@@ -24,6 +24,8 @@ void GameScene::initialize() {
 	bullet_count = 0;
 	UI = new UI_gamescene(pl);
 	bg = new BackGraph();
+
+	phase = 0;
 }
 
 void GameScene::finalize() {
@@ -81,13 +83,35 @@ void GameScene::update_late() {
 }
 
 void GameScene::shot_emit(int x, int y,int pw,bool slow) {
-	if (pw > 100) {
-		if (slow) { pl_Bull[bullet_count]->shoot(x + 40, y); bullet_count++; }
-		else pl_Bull[bullet_count]->shoot(x+40, y); bullet_count++;
+	if (pw > 95) {
+		if (slow) {
+			pl_Bull[bullet_count]->shoot(x + 40, y); bullet_count++;
+			pl_Bull[bullet_count]->shoot(x + 35, y); bullet_count++;
+			pl_Bull[bullet_count]->shoot(x + 45, y); bullet_count++;
+			pl_Bull[bullet_count]->shoot(x + 30, y); bullet_count++;
+			pl_Bull[bullet_count]->shoot(x + 50, y); bullet_count++;
+		}
+		else {
+			pl_Bull[bullet_count]->shoot(x + 40, y - 10); bullet_count++;
+			pl_Bull[bullet_count]->shoot(x + 30, y); bullet_count++;
+			pl_Bull[bullet_count]->shoot(x + 50, y); bullet_count++;
+			pl_Bull[bullet_count]->shoot(x + 10, y + 10); bullet_count++;
+			pl_Bull[bullet_count]->shoot(x + 70, y + 10); bullet_count++;
+		}
 	}
 	else if (pw > 80) {
-		if (slow) {}
-		else pl_Bull[bullet_count]->shoot(x+40, y); bullet_count++;
+		if (slow) {
+			pl_Bull[bullet_count]->shoot(x + 35, y); bullet_count++;
+			pl_Bull[bullet_count]->shoot(x + 45, y); bullet_count++;
+			pl_Bull[bullet_count]->shoot(x + 30, y); bullet_count++;
+			pl_Bull[bullet_count]->shoot(x + 50, y); bullet_count++;
+		}
+		else { 
+		pl_Bull[bullet_count]->shoot(x + 30, y); bullet_count++; 
+		pl_Bull[bullet_count]->shoot(x + 50, y ); bullet_count++;
+		pl_Bull[bullet_count]->shoot(x + 10, y + 10); bullet_count++;
+		pl_Bull[bullet_count]->shoot(x + 70, y + 10); bullet_count++;
+		}
 	}
 	else if (pw > 60) {
 		if (slow) { pl_Bull[bullet_count]->shoot(x + 30, y - 10); bullet_count++; pl_Bull[bullet_count]->shoot(x + 50, y - 10); bullet_count++; pl_Bull[bullet_count]->shoot(x + 40, y); bullet_count++; }
