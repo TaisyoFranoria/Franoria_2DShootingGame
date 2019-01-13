@@ -3,7 +3,7 @@
 BackGraph::BackGraph() {
 	gra = LoadGraph("img/Back/2D/debugzone.png");
 	x = 0;
-	y = -1304;
+	y = -3304;
 	timecount = 0;
 }
 
@@ -13,7 +13,7 @@ BackGraph::~BackGraph() {
 
 void BackGraph::update() {
 	y++;
-	if (y > 0)y = -1304;
+	if (y > 0)y = -3304;
 }
 
 void BackGraph::draw() {

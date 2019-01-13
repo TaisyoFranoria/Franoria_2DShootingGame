@@ -26,6 +26,7 @@ void GameScene::initialize() {
 	bg = new BackGraph();
 
 	phase = 0;
+	pose_now = false;
 }
 
 void GameScene::finalize() {
@@ -45,7 +46,8 @@ void GameScene::update() {
 void GameScene::update_abs() {
 	for (int i = 0, n = (unsigned)enm.size(); i < n; i++)enm[i]->update();
 	pl->update();
-	if (time%3==0&&pl->get_now(1))shot_emit(pl->get_point(0), pl->get_point(1), pl->get_status(2), pl->get_now(0));
+	if (time%3==0&&pl->get_now(1)&&!pl->get_now(2))shot_emit(pl->get_point(0), pl->get_point(1), pl->get_status(2), pl->get_now(0));
+	if (pl->get_now(2))clear_enemy();
 	for (int i = 0, n = (unsigned)(sizeof(Item) / sizeof(Item[0])); i < n; i++)Item[i]->update(pl);
 	for (int i = 0, n = (unsigned)(sizeof(pl_Bull) / sizeof(pl_Bull[0])); i < n; i++) {
 		pl_Bull[i]->update();
@@ -53,6 +55,8 @@ void GameScene::update_abs() {
 	}
 	for (int i = 0, n = (unsigned)p_efk.size(); i < n; i++)p_efk[i]->update();
 	if (bullet_count >= ((unsigned)(sizeof(pl_Bull) / sizeof(pl_Bull[0]) - 5)))bullet_count = 0;
+
+	if (CheckHitKey(KEY_INPUT_Q))pose_now = true;
 }
 
 void GameScene::draw() {
@@ -131,4 +135,8 @@ int GameScene::get_time() { return time; }
 int GameScene::get_xy(int num) {
 	if (num == 0)return x;
 	else         return y;
+}
+
+void GameScene::clear_enemy() {
+	for (int i = 0, n = (unsigned)enm.size(); i < n; i++)enm[i]->Damage(9999999999);
 }

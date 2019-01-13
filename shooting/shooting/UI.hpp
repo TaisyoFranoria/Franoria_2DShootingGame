@@ -10,6 +10,7 @@ public:
 	void initialize(player* pl);
 	void finalize();
 	void updateUI(player* pl);
+
 private:
 	int pl_life;
 	int pl_lifeMAX;

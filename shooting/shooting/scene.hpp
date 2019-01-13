@@ -1,7 +1,6 @@
 #pragma once
 #include<Dxlib.h>
 #include<iostream>
-#include"player.hpp"
 
 class scene {
 public:
@@ -16,6 +15,7 @@ public:
 	virtual void update_ALT();
 
 	bool get_alive();
+	bool pose_now;
 protected:
 	int time;
 	int x, y;

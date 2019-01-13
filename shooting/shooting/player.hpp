@@ -21,6 +21,7 @@ private:
 	}status;
 	bool slow;
 	bool shot;
+	bool bomb_now;
 	int DrawPlayerGraph(int num);
 public:
 	player();

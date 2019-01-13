@@ -1,11 +1,2 @@
-﻿  Game.cpp
-d:\documents\franoria_2dshootinggame\shooting\shooting\shot.hpp(3): warning C4067: プリプロセッサ ディレクティブの後に余分な文字がありました - 改行が必要です
-d:\documents\franoria_2dshootinggame\shooting\shooting\shot.hpp(4): warning C4067: プリプロセッサ ディレクティブの後に余分な文字がありました - 改行が必要です
-d:\documents\franoria_2dshootinggame\shooting\shooting\game.cpp(15): warning C4305: '=': '__int64' から 'int' へ切り詰めます。
-d:\documents\franoria_2dshootinggame\shooting\shooting\game.cpp(15): warning C4309: '=': 定数値が切り捨てられました。
-d:\documents\franoria_2dshootinggame\shooting\shooting\game.cpp(41): warning C4018: '>=': signed と unsigned の数値を比較しようとしました。
-d:\documents\franoria_2dshootinggame\shooting\shooting\game.cpp(48): warning C4305: '=': '__int64' から 'int' へ切り詰めます。
-d:\documents\franoria_2dshootinggame\shooting\shooting\game.cpp(48): warning C4309: '=': 定数値が切り捨てられました。
-d:\documents\franoria_2dshootinggame\shooting\shooting\game.cpp(58): warning C4305: '=': '__int64' から 'int' へ切り詰めます。
-d:\documents\franoria_2dshootinggame\shooting\shooting\game.cpp(58): warning C4309: '=': 定数値が切り捨てられました。
+﻿  BackGraph.cpp
   shooting.vcxproj -> D:\Documents\Franoria_2DShootingGame\shooting\Debug\shooting.exe

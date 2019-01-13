@@ -46,4 +46,5 @@ protected:
 	BackGraph* bg;
 
 	int phase;
+	void clear_enemy();
 };

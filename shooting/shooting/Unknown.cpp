@@ -7,7 +7,7 @@ Unknown_::Unknown_() {
 	anim_length = (unsigned)gra.size();
 	alive = false;
 	shot = false;
-	move_lange = GetRand(500);
+	move_lange = GetRand(100);
 	pt = GetRand(8);
 	hp = 500;
 	atk = 0;
@@ -21,7 +21,7 @@ Unknown_::Unknown_(int x,int y,int hp,int atk) {
 	anim_length = (unsigned)gra.size();
 	alive = false;
 	shot = false;
-	move_lange = GetRand(500);
+	move_lange = GetRand(100);
 	pt = GetRand(8);
 	this->hp = hp;
 	this->atk = atk;
@@ -39,28 +39,28 @@ void Unknown_::update() {
 			y += 2;
 			if (y > move_lange / 2) {
 				pt = GetRand(8);
-				move_lange = GetRand(500);
+				move_lange = GetRand(100);
 			}
 			break;
 		case 1:
 			x += 2;
 			if (x > move_lange / 2) {
 				pt = GetRand(8);
-				move_lange = GetRand(500);
+				move_lange = GetRand(100);
 			}
 			break;
 		case 2:
 			y -= 2;
 			if (y <-( move_lange / 2)) {
 				pt = GetRand(8);
-				move_lange = GetRand(500);
+				move_lange = GetRand(100);
 			}
 			break;
 		case 3:
 			y += 2;
 			if (x < -(move_lange / 2)) {
 				pt = GetRand(8);
-				move_lange = GetRand(500);
+				move_lange = GetRand(100);
 			}
 			break;
 		case 4:
@@ -68,7 +68,7 @@ void Unknown_::update() {
 			x++;
 			if (y > move_lange/4) {
 				pt = GetRand(8);
-				move_lange = GetRand(500);
+				move_lange = GetRand(100);
 			}
 			break;
 		case 5:
@@ -76,7 +76,7 @@ void Unknown_::update() {
 			x--;
 			if (y > move_lange / 4) {
 				pt = GetRand(8);
-				move_lange = GetRand(500);
+				move_lange = GetRand(100);
 			}
 			break;
 		case 6:
@@ -84,7 +84,7 @@ void Unknown_::update() {
 			x++;
 			if (x > move_lange / 4) {
 				pt = GetRand(8);
-				move_lange = GetRand(500);
+				move_lange = GetRand(100);
 			}
 			break;
 		case 7:
@@ -92,7 +92,7 @@ void Unknown_::update() {
 			x--;
 			if (y < -(move_lange / 4)) {
 				pt = GetRand(8);
-				move_lange = GetRand(500);
+				move_lange = GetRand(100);
 			}
 			break;
 		default :
@@ -100,7 +100,7 @@ void Unknown_::update() {
 			x--;
 			if (y < -(move_lange / 4)) {
 				pt = GetRand(8);
-				move_lange = GetRand(500);
+				move_lange = GetRand(100);
 			}
 			break;
 		}

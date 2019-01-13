@@ -14,7 +14,7 @@ void scene::initialize() {
 	x = 0;
 	y = 0;
 	alive = true;
-	
+	pose_now = false;
 }
 
 void scene::finalize() {

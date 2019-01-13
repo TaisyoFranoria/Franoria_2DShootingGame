@@ -19,6 +19,7 @@ void player::initialize() {
 	anim_counter = 1;
 	slow = false;
 	shot = false;
+	bomb_now = false;
 
 	status.LIFE = 100;
 	status.BOMB = 2;
@@ -34,6 +35,9 @@ void player::finalize() {
 void player::update() {
 
 	//テスト　あとでバリバリ変える
+
+	if (CheckHitKey(KEY_INPUT_X))bomb_now = true;
+	else bomb_now = false;
 	
 	if (CheckHitKey(KEY_INPUT_LSHIFT)) slow = true;
 	else slow = false;
@@ -114,6 +118,8 @@ bool player::get_now(int num) {
 		return slow;
 	case 1:
 		return shot;
+	case 2:
+		return bomb_now;
 	default:
 		return false;
 	}

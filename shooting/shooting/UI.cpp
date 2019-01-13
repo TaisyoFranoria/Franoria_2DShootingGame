@@ -22,6 +22,8 @@ void UI_gamescene::init_graph() {
 	gra.push_back(LoadGraph("img/UI/Big_UI2.png"));
 	gra.push_back(LoadGraph("img/UI/g_pw.png"));
 	gra.push_back(LoadGraph("img/UI/g_life.png"));
+	gra.push_back(LoadGraph("img/UI/pose_win0.png"));
+	gra.push_back(LoadGraph("img/UI/pose_win1.png"));
 }
 
 void UI_gamescene::finalize() {
@@ -34,16 +36,16 @@ void UI_gamescene::updateUI(player* pl) {
 }
 
 void UI_gamescene::update(player* pl) {
-	DrawGraph(0,0,gra[0],TRUE);
-	
-	DrawExtendGraph(930,80,930+(200*((float)pl->get_status(0)/ (float)pl_lifeMAX)),98,gra[2],TRUE);
-	DrawExtendGraph(930,100,930+(200*((float)pl->get_status(2)/ (float)pl_powMAX)),118,gra[1],TRUE);
-	DrawFormatString(880,120,0xFFFFFF,"BOMB: %d",pl->get_status(1));
+	DrawGraph(0, 0, gra[0], TRUE);
+
+	DrawExtendGraph(930, 80, 930 + (200 * ((float)pl->get_status(0) / (float)pl_lifeMAX)), 98, gra[2], TRUE);
+	DrawExtendGraph(930, 100, 930 + (200 * ((float)pl->get_status(2) / (float)pl_powMAX)), 118, gra[1], TRUE);
+	DrawFormatString(880, 120, 0xFFFFFF, "BOMB: %d", pl->get_status(1));
 	DrawFormatString(880, 80, 0xFFFFFF, "LIFE:      %d", pl->get_status(0));
 	DrawFormatString(880, 100, 0xFFFFFF, "POW :      %d", pl->get_status(2));
 }
 
 void UI_gamescene::draw() {
-
+	
 }
 

@@ -154,11 +154,13 @@
     <ClCompile Include="debug_zone.cpp" />
     <ClCompile Include="EfectBase.cpp" />
     <ClCompile Include="EnemyBase.cpp" />
+    <ClCompile Include="enemy_coll.cpp" />
     <ClCompile Include="game_scene.cpp" />
     <ClCompile Include="ItemBase.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="player_shotEfect.cpp" />
+    <ClCompile Include="PoseScene.cpp" />
     <ClCompile Include="scene.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="shikimi_shot.cpp" />
@@ -173,10 +175,12 @@
     <ClInclude Include="debug_zone.hpp" />
     <ClInclude Include="EfectBase.hpp" />
     <ClInclude Include="EnemyBase.hpp" />
+    <ClInclude Include="enemy_shot.hpp" />
     <ClInclude Include="game_scene.hpp" />
     <ClInclude Include="ItemBase.hpp" />
     <ClInclude Include="player.hpp" />
     <ClInclude Include="player_shotEfect.hpp" />
+    <ClInclude Include="PoseScene.hpp" />
     <ClInclude Include="scene.hpp" />
     <ClInclude Include="Game.hpp" />
     <ClInclude Include="shikimi_shot.hpp" />
