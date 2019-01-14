@@ -6,6 +6,7 @@ shikimi_shot::shikimi_shot() {
 	r = 11;//îºåaÅñ2Ç≠ÇÁÇ¢
 	alive = false;
 	gra = LoadGraph("img/shot/shikimi_shot01.png");
+	snd_coll = LoadSoundMem("snd/dummy.ogg");
 }
 
 shikimi_shot::~shikimi_shot() {

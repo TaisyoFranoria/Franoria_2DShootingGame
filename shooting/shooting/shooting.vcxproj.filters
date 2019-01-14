@@ -120,7 +120,7 @@
     <ClCompile Include="PoseScene.cpp">
       <Filter>ソース ファイル\scene</Filter>
     </ClCompile>
-    <ClCompile Include="enemy_coll.cpp">
+    <ClCompile Include="enemy_shotl.cpp">
       <Filter>ソース ファイル\Enemy\Enemy_shot</Filter>
     </ClCompile>
   </ItemGroup>

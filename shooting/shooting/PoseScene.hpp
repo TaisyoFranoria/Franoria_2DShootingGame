@@ -9,5 +9,6 @@ public:
 	void draw();
 private:
 	int state;
-	int gra[2];
+	int gra[3];
+	int sys_sound;
 };

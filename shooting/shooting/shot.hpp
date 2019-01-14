@@ -19,4 +19,5 @@ protected:
 	int x, y;
 	int r;
 	int gra;
+	int snd_coll;
 };

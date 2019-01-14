@@ -18,7 +18,7 @@ void GameScene::initialize() {
 	for (int i = 0; i < 8; i++)p_efk.push_back(new shikimi_shotEfects());//0~8　プレイヤーのショット
 	pefk_count = 0;
 	pefk_length = (unsigned)p_efk.size();
-	for (int i = 0; i < 5; i++)enm.push_back(new Unknown_());
+	for (int i = 0; i < 100; i++)enm.push_back(new Unknown_());
 	for (int i = 0, n = (unsigned)(sizeof(pl_Bull) / sizeof(pl_Bull[0])); i < n; i++)pl_Bull[i] = new shikimi_shot();
 	for (int i = 0, n = (unsigned)(sizeof(Item) / sizeof(Item[0])); i < n; i++)Item[i] = new atkup();
 	bullet_count = 0;

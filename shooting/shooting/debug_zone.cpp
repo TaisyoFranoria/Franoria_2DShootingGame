@@ -26,7 +26,7 @@ void debug_zone::update() {
 	if (time == 300)enm[2]->spawn(500, 400);
 	if (time == 310)enm[3]->spawn(400, 400);
 	if (time == 320)enm[4]->spawn(430, 400);
-
+	//if (time == 400)for (int i = 5; i < 100; i++)enm[i]->spawn(400,400);
 	if (CheckHitKey(KEY_INPUT_4))enm[0]->respawn(400,400);
 
 }

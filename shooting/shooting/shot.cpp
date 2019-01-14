@@ -2,7 +2,7 @@
 #include"shot.hpp"
 
 shot::shot() {
-	x, y, gra = 0;
+	x, y, gra,snd_coll = 0;
 	alive = false;
 }
 
@@ -40,5 +40,6 @@ void shot::onColl() {
 void shot::onColl(EnemyBase* ene,EfectBase* efk) {
 	ene->Damage(20);
 	efk->spawn(x,y);
+	PlaySoundMem(snd_coll,DX_PLAYTYPE_BACK);
 	alive = false;
 }

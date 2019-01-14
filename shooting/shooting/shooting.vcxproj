@@ -154,7 +154,7 @@
     <ClCompile Include="debug_zone.cpp" />
     <ClCompile Include="EfectBase.cpp" />
     <ClCompile Include="EnemyBase.cpp" />
-    <ClCompile Include="enemy_coll.cpp" />
+    <ClCompile Include="enemy_shotl.cpp" />
     <ClCompile Include="game_scene.cpp" />
     <ClCompile Include="ItemBase.cpp" />
     <ClCompile Include="main.cpp" />
