@@ -1,7 +1,7 @@
 #include"EnemyBase.hpp"
 
 EnemyBase::EnemyBase() {
-	x, y, gra, anim_length, animState, hp, atk, r = 0;
+	x, y, gra, anim_length, animState, hp, atk, r ,sound_handle,count= 0;
 	alive,shot = false;
 }
 
@@ -45,4 +45,15 @@ void EnemyBase::InitGraph(std::string filepath) {
 		else gra.push_back(handle);
 	}
 	if (gra.size() == 0)DebugBreak();
+}
+
+void EnemyBase::destroy() {
+	PlaySoundMem(sound_handle,DX_PLAYTYPE_BACK);
+	alive = false;
+}
+
+void EnemyBase::destroy(EfectBase* efk) {
+	efk->spawn(x,y);
+	PlaySoundMem(sound_handle, DX_PLAYTYPE_BACK);
+	alive = false;
 }

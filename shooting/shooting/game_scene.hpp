@@ -10,6 +10,7 @@
 #include"atkup.hpp"
 #include"Unknown.hpp"
 #include"shikimi_shotEfects.hpp"
+#include"EnemyDestroyEFK.hpp"
 
 #define GAME_WIDTH (850)
 #define GAME_HIGHT (710)
@@ -36,9 +37,15 @@ protected:
 	std::vector<Unknown_*> enm;
 	player* pl;
 	shikimi_shot* pl_Bull[300];
+
 	std::vector<player_shotefect*> p_efk;
 	int pefk_count;
 	int pefk_length;
+
+	std::vector<EnemyDestroyEFK*> ed_efk;
+	int edefk_count;
+	int edefk_length;
+
 	int bullet_count;
 	ItemBase* Item[50];
 	int Itemcount;
@@ -46,5 +53,8 @@ protected:
 	BackGraph* bg;
 
 	int phase;
+	int phase_frame;
+	int stage_title[2];
 	void clear_enemy();
+	void fadetitle();
 };

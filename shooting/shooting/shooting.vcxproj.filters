@@ -123,6 +123,9 @@
     <ClCompile Include="enemy_shotl.cpp">
       <Filter>ソース ファイル\Enemy\Enemy_shot</Filter>
     </ClCompile>
+    <ClCompile Include="EnemyDestroyEFK.cpp">
+      <Filter>ソース ファイル\Enemy</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.hpp">
@@ -178,6 +181,9 @@
     </ClInclude>
     <ClInclude Include="enemy_shot.hpp">
       <Filter>ヘッダー ファイル\Enemy\Enemy_shot</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyDestroyEFK.hpp">
+      <Filter>ヘッダー ファイル\Enemy</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

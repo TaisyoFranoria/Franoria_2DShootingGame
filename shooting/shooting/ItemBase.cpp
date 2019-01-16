@@ -1,7 +1,7 @@
 #include"ItemBase.hpp"
 
 ItemBase::ItemBase() {
-	x, y, gra = 0;
+	x, y, gra,snd = 0;
 	pl_up = false;
 	alive = false;
 }
@@ -38,4 +38,5 @@ void ItemBase::draw() {
 void ItemBase::onColl(player* pl) {
 	alive = false;
 	pl_up = false;
+	
 }

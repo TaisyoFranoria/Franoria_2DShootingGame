@@ -15,6 +15,7 @@ public:
 protected:
 	int x, y;
 	int gra;
+	int snd;
 	bool pl_up;//プレイヤーが上に行ったときにアイテムが吸収される処理
 	bool alive;
 };

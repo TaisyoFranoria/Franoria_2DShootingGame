@@ -2,14 +2,17 @@
 #include"EnemyBase.hpp"
 
 class Unknown_ : public EnemyBase {
-public :
+public:
 	Unknown_();
-	Unknown_(int x,int y,int hp,int atk);
+	Unknown_(int x, int y, int hp, int atk);
 	~Unknown_();
 	void update();
+	void update(EfectBase* efk);
 	void draw();
-	void spawn(int x,int y);
-	void respawn(int x,int y);
+	void spawn(int x, int y);
+	void respawn(int x, int y);
+
+	
 private:
 	int move_lange;
 	int pt;

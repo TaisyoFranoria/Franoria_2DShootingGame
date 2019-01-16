@@ -18,6 +18,11 @@ void GameScene::initialize() {
 	for (int i = 0; i < 8; i++)p_efk.push_back(new shikimi_shotEfects());//0~8　プレイヤーのショット
 	pefk_count = 0;
 	pefk_length = (unsigned)p_efk.size();
+
+	for (int i = 0; i < 150; i++)ed_efk.push_back(new EnemyDestroyEFK());
+	edefk_count = 0;
+	edefk_length = (unsigned)ed_efk.size();
+	
 	for (int i = 0; i < 100; i++)enm.push_back(new Unknown_());
 	for (int i = 0, n = (unsigned)(sizeof(pl_Bull) / sizeof(pl_Bull[0])); i < n; i++)pl_Bull[i] = new shikimi_shot();
 	for (int i = 0, n = (unsigned)(sizeof(Item) / sizeof(Item[0])); i < n; i++)Item[i] = new atkup();
@@ -26,6 +31,10 @@ void GameScene::initialize() {
 	bg = new BackGraph();
 
 	phase = 0;
+	phase_frame = 0;
+	stage_title[0] = LoadGraph("img/Back/stage_debug/stage_name_dummy.png");
+	stage_title[1] = LoadGraph("img/Back/stage_debug/cloud.png");
+
 	pose_now = false;
 }
 
@@ -44,16 +53,25 @@ void GameScene::update() {
 }
 
 void GameScene::update_abs() {
-	for (int i = 0, n = (unsigned)enm.size(); i < n; i++)enm[i]->update();
+	for (int i = 0, n = (unsigned)enm.size(); i < n; i++) { 
+		enm[i]->update(ed_efk[edefk_count]);
+		edefk_count++;
+		if (edefk_count >= edefk_length)edefk_count = 0;
+	}
 	pl->update();
 	if (time%3==0&&pl->get_now(1)&&!pl->get_now(2))shot_emit(pl->get_point(0), pl->get_point(1), pl->get_status(2), pl->get_now(0));
 	if (pl->get_now(2))clear_enemy();
 	for (int i = 0, n = (unsigned)(sizeof(Item) / sizeof(Item[0])); i < n; i++)Item[i]->update(pl);
 	for (int i = 0, n = (unsigned)(sizeof(pl_Bull) / sizeof(pl_Bull[0])); i < n; i++) {
 		pl_Bull[i]->update();
-		for (int j = 0, n2 = (unsigned)enm.size(); j < n2; j++)if (pl_Bull[i]->alive) { pl_Bull[i]->enemy_coll(enm[j], p_efk[pefk_count]); pefk_count++; if (pefk_count >= pefk_length)pefk_count = 0; };
+		for (int j = 0, n2 = (unsigned)enm.size(); j < n2; j++)if (pl_Bull[i]->alive) { 
+			pl_Bull[i]->enemy_coll(enm[j], p_efk[pefk_count]); 
+			pefk_count++; 
+			if (pefk_count >= pefk_length)pefk_count = 0; 
+		}
 	}
-	for (int i = 0, n = (unsigned)p_efk.size(); i < n; i++)p_efk[i]->update();
+	for (int i = 0, n = (unsigned)(p_efk.size()); i < n; i++)p_efk[i]->update();
+	for (int i = 0, n = (unsigned)(ed_efk.size()); i < n; i++)ed_efk[i]->update();
 	if (bullet_count >= ((unsigned)(sizeof(pl_Bull) / sizeof(pl_Bull[0]) - 5)))bullet_count = 0;
 
 	if (CheckHitKey(KEY_INPUT_Q))pose_now = true;
@@ -69,6 +87,7 @@ void GameScene::draw_abs() {
 	pl->draw();
 	for (int i = 0, n = (unsigned)(sizeof(pl_Bull) / sizeof(pl_Bull[0])); i < n; i++) pl_Bull[i]->draw();
 	for (int i = 0, n = (unsigned)p_efk.size(); i < n; i++)p_efk[i]->draw();
+	for (int i = 0, n = (unsigned)ed_efk.size(); i < n; i++)ed_efk[i]->draw();
 }
 
 void GameScene::update_late() {
@@ -82,7 +101,7 @@ void GameScene::update_late() {
 	if (pl->get_point(1) < 0)pl->set_point(pl->get_point(0), 0);
 
 	if (bullet_count >= (unsigned)(sizeof(pl_Bull) / sizeof(pl_Bull[0])))bullet_count = 0;
-	if (Itemcount >= (unsigned)(sizeof(Item) / sizeof(Item[0])))Itemcount = 0;
+	if (Itemcount >= ((unsigned)(sizeof(Item) / sizeof(Item[0]))-10))Itemcount = 0;
 	update_ALT();
 }
 
@@ -139,4 +158,24 @@ int GameScene::get_xy(int num) {
 
 void GameScene::clear_enemy() {
 	for (int i = 0, n = (unsigned)enm.size(); i < n; i++)enm[i]->Damage(9999999999);
+}
+
+void GameScene::fadetitle() {
+	if (phase_frame < 128) {
+		SetDrawBlendMode(DX_BLENDMODE_ALPHA, (phase_frame * 2));
+		DrawExtendGraph(50+(phase_frame/4),5,450+(phase_frame/4),155,stage_title[1],TRUE);
+		DrawExtendGraph(450 - (phase_frame / 4), 600, 50 - (phase_frame / 4), 750, stage_title[1], TRUE);
+		DrawGraph(100, 50, stage_title[0], TRUE);
+		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
+	}
+	else if (phase_frame < 255) {
+		DrawExtendGraph(82, 5, 482, 155, stage_title[1], TRUE);
+		DrawExtendGraph(418, 600, 18, 750, stage_title[1], TRUE);
+		DrawGraph(100, 50, stage_title[0], TRUE);
+	}
+	else if (phase_frame < 383) {
+		SetDrawBlendMode(DX_BLENDMODE_ALPHA, (383 - phase_frame));
+		DrawGraph(100, 50, stage_title[0], TRUE);
+		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
+	}
 }

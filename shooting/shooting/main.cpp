@@ -4,7 +4,7 @@
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
 
-	SetMainWindowText("ディズニーランド");
+	SetMainWindowText("幽玄のフラノリア");
 	SetGraphMode(1280, 720, 32);
 	ChangeWindowMode(TRUE);
 	if (DxLib_Init() == -1)return -1;
