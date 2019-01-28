@@ -167,6 +167,7 @@
     <ClCompile Include="shikimi_shot.cpp" />
     <ClCompile Include="shikimi_shotEfects.cpp" />
     <ClCompile Include="shot.cpp" />
+    <ClCompile Include="talk.cpp" />
     <ClCompile Include="UI.cpp" />
     <ClCompile Include="Unknown.cpp" />
   </ItemGroup>
@@ -188,6 +189,7 @@
     <ClInclude Include="shikimi_shot.hpp" />
     <ClInclude Include="shikimi_shotEfects.hpp" />
     <ClInclude Include="shot.hpp" />
+    <ClInclude Include="talk.hpp" />
     <ClInclude Include="UI.hpp" />
     <ClInclude Include="Unknown.hpp" />
   </ItemGroup>
