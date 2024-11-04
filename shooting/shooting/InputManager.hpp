@@ -9,4 +9,6 @@ public:
 	int checkinput();
 private:
 	void initialize();
+	void finalize();
+
 };
