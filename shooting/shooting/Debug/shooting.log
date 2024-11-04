@@ -1,3 +1,1 @@
-﻿  EnemyDestroyEFK.cpp
-d:\documents\franoria_2dshootinggame\shooting\shooting\enemydestroyefk.cpp(4): warning C4101: 'x': ローカル変数は 1 度も使われていません。
-  shooting.vcxproj -> D:\Documents\Franoria_2DShootingGame\shooting\Debug\shooting.exe
+﻿  shooting.vcxproj -> D:\Documents\workspace\2024\Franoria_2DShootingGame\shooting\Debug\shooting.exe
